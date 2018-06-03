@@ -1,6 +1,7 @@
 package com.jiang.service.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import com.jiang.dao.CategoryDao;
 import com.jiang.dao.impl.CategoryDaoImpl;
@@ -13,6 +14,8 @@ public class CategoryImpl implements CategoryService{
 	
 	public void addCategory(Category moden) {
 		// TODO Auto-generated method stub
+		String uuid = UUID.randomUUID().toString();
+		moden.setId(uuid);
 		dao.addCategory(moden);
 	}
 

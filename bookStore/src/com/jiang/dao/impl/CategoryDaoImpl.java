@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.jiang.dao.CategoryDao;
+import com.jiang.pojo.Book;
 import com.jiang.pojo.Category;
 import com.jiang.util.DBCPUtil;
 
@@ -57,5 +58,7 @@ public class CategoryDaoImpl implements CategoryDao{
 		
 		return null;
 	}
+
+
 
 }

@@ -16,7 +16,11 @@ public class DBCPUtil {
 	static {
 		
 		try {
-			InputStream inputStream = DBCPUtil.class.getClassLoader().getResourceAsStream("");
+			
+			
+			//String path = DBCPUtil.class.getClassLoader().getResource("../dbcpconfig.properties").getPath();
+			
+			InputStream inputStream = DBCPUtil.class.getClassLoader().getResourceAsStream("dbcpconfig.properties");
 			
 			Properties properties = new Properties();
 			
@@ -26,6 +30,7 @@ public class DBCPUtil {
 			
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e);
 			throw new ExceptionInInitializerError(e);
 		}
 		
