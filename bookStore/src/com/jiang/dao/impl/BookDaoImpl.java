@@ -39,7 +39,7 @@ public class BookDaoImpl implements BookDao {
 		
 		try {
 			
-			Book book	= queryRunner.query("select * from book where id = ?)", new BeanHandler<Book>(Book.class),id);
+			Book book	= queryRunner.query("select * from book where id = ?", new BeanHandler<Book>(Book.class),id);
 			
 			if (book != null) {
 				Category category	= queryRunner.query("select * from category where id = (select categoryId from book where id = ?)", new BeanHandler<Category>(Category.class),id);

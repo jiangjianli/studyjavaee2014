@@ -1,5 +1,7 @@
 package com.jiang.servlet;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -54,6 +56,21 @@ public class WebServlet extends HttpServlet {
 		
 			    String categoryId = req.getParameter("categoryId");
 			 
+			    if (categoryId.equals("") || categoryId == null) {
+			    	List<Category> categorys = categoryservice.findAllCategory();
+					req.setAttribute("category", categorys);
+					int pagei = 1;
+					String numstr = req.getParameter("num");
+					if (numstr != null ) {
+						pagei =  Integer.parseInt(numstr);
+					}
+				  Page page = bookservice.findBookPageRecords(pagei + "");
+				  req.setAttribute("page", page);
+				  getServletContext().setAttribute("selectcategoryid", "");
+				  req.setAttribute("selectcategoryid", "");
+				  req.getRequestDispatcher("/home.jsp").forward(req, resp);
+				}else
+				{
 			    
 				List<Category> categorys = categoryservice.findAllCategory();
 				req.setAttribute("category", categorys);
@@ -68,11 +85,15 @@ public class WebServlet extends HttpServlet {
 			  getServletContext().setAttribute("selectcategoryid", categoryId);
 			  //req.setAttribute("selectcategoryid", categoryId);
 			  req.getRequestDispatcher("/home.jsp").forward(req, resp);
-			  
+				}
+			}else if (op.equals("deletecar")) {
+				
+				
+				
 			}
 			
 			
-		}
+	}
 		
 		
 	

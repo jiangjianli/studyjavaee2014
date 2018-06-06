@@ -43,4 +43,27 @@
   	<url-pattern>/web</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  
+  	<servlet-name>carservlet</servlet-name>
+  	<servlet-class>com.jiang.servlet.CarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  
+  	<servlet-name>carservlet</servlet-name>
+  	<url-pattern>/car</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  
+  	<servlet-name>logincarservlet</servlet-name>
+  	<servlet-class>com.jiang.servlet.LoginAndRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  
+  	<servlet-name>logincarservlet</servlet-name>
+  	<url-pattern>/regiser</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

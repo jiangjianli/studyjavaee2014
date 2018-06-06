@@ -20,8 +20,16 @@
 <body>
 <div>
 		<a href="${pageContext.request.contextPath}/web?op=gohome">首页</a>
-		<a>登陆</a>
-		<a>免费注册</a>
+		<c:if test="${sessionScope.customer==null}">
+		<a href="login.jsp">登陆</a>
+		<a href="register.jsp">免费注册</a>
+		</c:if>
+		<br/>
+		<c:if test="${sessionScope.customer!=null}">
+		欢迎您${sessionScope.customer.nickName}
+		<a href="${pageContext.request.contextPath}/regiser?op=logout">注销</a>
+		</c:if>
+		
 		<a>我的订单</a>
 		<a>购物车</a>
 		
@@ -52,7 +60,8 @@
 				
 				<br/>书名 ${s.name}<br/>
 				作者${s.author}<br/>
-			
+				<a href="${pageContext.request.contextPath}/car?op=addcar&id=${s.id}">加入购物车</a><br/>
+				<a href="${pageContext.request.contextPath}/showcar.jsp">购物车</a>
 			</td>
 			</c:forEach>
 		
