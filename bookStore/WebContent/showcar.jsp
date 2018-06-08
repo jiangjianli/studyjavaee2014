@@ -41,10 +41,13 @@
 		</tr>
 		
 		</c:forEach>
-		
+		<tr>总数${sessionScope.car.quanity} 总价:${sessionScope.car.price}</tr>
 	</table>
+	
 
 </c:if>
+
+<a href="${pageContext.request.contextPath}/car?op=create">去结算</a>
 
 </body>
 

@@ -1,6 +1,7 @@
 package com.jiang.service;
 
 import com.jiang.pojo.Book;
+import com.jiang.pojo.OrderModen;
 import com.jiang.util.Page;
 
 public interface BookService {
@@ -15,5 +16,8 @@ public interface BookService {
 	Page findBookPageRecords(String num);
 	
 	Page findBookByCategoryPageRecords(String num,String categoryId);
+	
+	
+	void saveOrder(OrderModen moden);
 	
 }

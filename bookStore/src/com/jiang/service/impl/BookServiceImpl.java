@@ -4,13 +4,18 @@ import java.util.List;
 import java.util.UUID;
 
 import com.jiang.dao.BookDao;
+import com.jiang.dao.CarDao;
 import com.jiang.dao.impl.BookDaoImpl;
+import com.jiang.dao.impl.CarDaoImpl;
 import com.jiang.pojo.Book;
+import com.jiang.pojo.OrderModen;
 import com.jiang.service.BookService;
 import com.jiang.util.Page;
 
 public class BookServiceImpl implements BookService{
 
+	
+	CarDao carDao = new CarDaoImpl();
 	
 	BookDao dao = new BookDaoImpl();
 	
@@ -60,6 +65,11 @@ public class BookServiceImpl implements BookService{
 		return page;
 		
 	
+	}
+
+	public void saveOrder(OrderModen moden) {
+		// TODO Auto-generated method stub
+		carDao.createOrder(moden);
 	}
 
 }

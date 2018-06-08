@@ -1,6 +1,7 @@
 package com.jiang.car;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import com.jiang.pojo.Book;
@@ -41,7 +42,13 @@ public class Car {
 	}
 
 	public int getQuanity() {
-		return quanity;
+		
+		int count = 0;
+		for (CarItem car : this.map.values()) {
+			count+=car.getQuanity();
+		}
+		
+		return count;
 	}
 
 	public void setQuanity(int quanity) {
@@ -49,6 +56,12 @@ public class Car {
 	}
 
 	public float getPrice() {
+		
+		float price = 0;
+		for (CarItem car : this.map.values()) {
+			price+=car.getQuanity() * car.getPrice();
+		}
+		
 		return price;
 	}
 

@@ -27,6 +27,9 @@ public class BookDaoImpl implements BookDao {
 													moden.getId(),moden.getName(),moden.getAuthor(),moden.getPath(),
 													moden.getFilename(),moden.getPrice(),moden.getCategory().getId(),
 													moden.getDescription());
+		
+		
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
